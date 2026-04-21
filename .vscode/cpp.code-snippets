@@ -1,6 +1,6 @@
 {
-	"BOJ": {
-		"prefix": "boj",
+	"CP Template": {
+		"prefix": "qrk",
 		"body": [
 			"#include <bits/stdc++.h>",
 			"#define FOR(i, n) for (int i = 0, _n = n; i < _n; i++)",
