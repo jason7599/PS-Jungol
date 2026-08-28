@@ -18,8 +18,6 @@ template<typename T> T& upmax(T& v, const T& other) { return v = max(v, other); 
 template<typename T> T& upmin(T& v, const T& other) { return v = min(v, other); }
 const pii DIRS[4] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}}; // drul
 
-using Node = unordered_map<char, int>;
-
 int main() {
     cin.tie(0)->sync_with_stdio(0);
     
@@ -29,33 +27,16 @@ int main() {
             input(str);
         }
 
-        vector<Node> tree; 
-        tree.push_back({}); // root
+        sort(strs.begin(), strs.end());
 
-        for (const auto& str : strs) {
-            Node* node = &tree.front();
-            for (char c : str) {
-                if (node->count(c)) {
-                    node = &tree[node->at(c)];
-                    if (node->empty()) { // leaf
-                        goto bad;
-                    }
-                } else {
-                    node->insert({c, tree.size()});
-                    tree.push_back({});
-                    node = &tree.back();
-                }
-            }
-            
-            if (!node->empty()) {
-                goto bad;
+        bool good = true;
+        for (int i = 0; i < (int)strs.size() - 1; i++) {
+            if (strs[i] == strs[i + 1].substr(0, strs[i].length())) {
+                good = false;
+                break;
             }
         }
 
-        print("YES");
-        continue;
-
-bad:
-        print("NO");
+        print(good ? "YES" : "NO");
     }
 }
