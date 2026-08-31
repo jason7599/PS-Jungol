@@ -3,11 +3,11 @@
 		"prefix": "qrk",
 		"body": [
 			"#include <bits/stdc++.h>",
-			"#define FOR(i, n) for (int i = 0, _n = n; i < _n; i++)",
-			"#define RANGE(i, s, e) for (int i = s, _e = e; i <= _e; i++)",
-			"#define REP(n) for (int _ = 0, _n = n; _ < _n; _++)",
-			"#define DBG(x) cerr << #x << \" = \" << x << '\\n'",
-			"#define OUT(x) cout << x",
+			"#define FOR(i, n) for (int i = 0, _n = (n); i < _n; ++i)",
+			"#define RANGE(i, s, e) for (int i = (s), _e = (e); i <= _e; ++i)",
+			"#define REP(n) for (int _ = 0, _n = (n); _ < _n; ++_)",
+			"#define DBG(x) cerr << #x << \" = \" << (x) << '\\n'",
+			"#define OUT(x) cout << (x)",
 			"#define SP cout << ' '",
 			"#define NL cout << '\\n'",
 			"using namespace std;",
@@ -25,7 +25,7 @@
 			"int main() {",
 			"\tcin.tie(0)->sync_with_stdio(0);",
 			"\t",
-			"}",
-		],
+			"}"
+		]
 	}
 }
