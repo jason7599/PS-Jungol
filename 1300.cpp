@@ -39,13 +39,11 @@ bool chk(int mx, int n_groups) {
 
 void show(int mx, int n_groups) {
     int sm = 0;
-    int cnt = 1;
+    int cnt = 0;
 
     FOR(i, n) {
-        // Must start a new group if:
-        // 1. adding arr[i] exceeds mx
-        // 2. remaining elements must each occupy their own group
-        if ((sm + arr[i] > mx || n - i == n_groups)) {
+        if (cnt > 0 &&
+            (sm + arr[i] > mx || n - i == n_groups - 1)) {
             OUT(cnt); SP;
             n_groups--;
             sm = 0;
